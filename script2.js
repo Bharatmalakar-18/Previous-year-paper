@@ -6,7 +6,7 @@
  let main=document.querySelector(".main-container");
  let showa=document.querySelector(".btn");
  let p=document.querySelector("p");
- 
+ let filename="";
  
  
  
@@ -19,21 +19,22 @@ btn.addEventListener("click",()=>{
        <p> Dec - 2025 paper <button class="btn" >open</button></p>
       //  <p>2023 paper </p>
       //  <p>2023 paper </p>
-      //  <p>2023 paper </p>`
+      //  <p>2023 paper </p>`;
    
    }
    else if(selectsub.value==="cs" && select.value==="sem3"){
-      result.innerHTML=`<p>  Dec - 2025 <button class="btn" >open</button></p>`
+      result.innerHTML=`<p>  Dec - 2025 <button class="btn" >open</button></p>`;
    }
-   let filename= "BSc/"+select.value+ "/"+selectsub.value+select.value+".pdf";
- console.log(filename);
+    filename= "BSc/"+select.value+ "/"+selectsub.value+select.value+".pdf";
+ 
+ 
+
+ });
  result.addEventListener("click",(e)=>{
    if(e.target.classList.contains("btn")){
-      // let file=e.target.getAttribute("data-file");
+      
 window.open(filename,"_blank");
    }
 });
-
- });
 
 

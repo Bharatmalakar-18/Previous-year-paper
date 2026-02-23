@@ -16,13 +16,13 @@ btn.addEventListener("click",()=>{
    if(selectsub.value==="physics"&& select.value==="sem3"){
       result.innerHTML=`
       
-       <p> Dec - 2025 paper <a href="${filename}" target="_blank" class="btn">Open</a> </p>
+       <p> Dec - 2025 paper <a href="${filename}"  class="btn">Open</a> </p>
       
        `;
    
    }
    else if(selectsub.value==="cs" && select.value==="sem3"){
-      result.innerHTML=`<p>  Dec - 2025  <a href="${filename}" target="_blank" class="btn">Open</a></p>`;
+      result.innerHTML=`<p>  Dec - 2025  <a href="${filename}" class="btn">Open</a></p>`;
    }
     filename= "BSc/"+select.value+ "/"+selectsub.value+select.value+".pdf";
  

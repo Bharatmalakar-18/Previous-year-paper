@@ -101,9 +101,15 @@ button {
     }
 }  
 .btn{
-    background-color: #4a5a85;
+    /* background-color: #1246d3;
     width: 80px;
-    margin-left: 20px;
+    margin-left: 20px; */
+    
+    background: blue;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+
     
 }
 p{

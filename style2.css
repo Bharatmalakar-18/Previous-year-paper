@@ -62,7 +62,6 @@ label {
 
 
 
-/* Button */
 button {
     width: 100%;
     padding: 12px;
@@ -100,14 +99,12 @@ button {
         padding: 10px;
     }
 }  
-.btn{
-    /* background-color: #1246d3;
-    width: 80px;
-    margin-left: 20px; */
-    
+.bttn{
+   
     background: blue;
     color: white;
     padding: 5px 10px;
+    width: min-content;
     text-decoration: none;
 
     

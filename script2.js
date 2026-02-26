@@ -1,39 +1,134 @@
- let course = document.querySelector("#course");
- let select=document.querySelector("#semester");
- let selectsub=document.querySelector("#subject");
- let btn=document.querySelector("#showBtn");
- let result=document.querySelector("#result");
- let main=document.querySelector(".main-container");
- let showa=document.querySelector(".btn");
- let p=document.querySelector("p");
- let filename="";
- 
- 
- 
- 
+let papersData = {
 
-btn.addEventListener("click",()=>{
-   if(selectsub.value==="physics"&& select.value==="sem3"){
-      result.innerHTML=`
+   bsc: {
+      sem1: {
+         // physics: {
+         //    "2023": "Bsc/sem3/physicssem3.pdf",
+         //    "2024": "papers/bsc/sem1/physics/2023.pdf",
+         //    "2026": "papers/bsc/sem1/physics/2023.pdf"
+         // },
+         // chemistry: {
+         //    "2023": "papers/bsc/sem1/chemistry/2023.pdf"
+         // },
+         computer_science:{
+            " Dec-2024":"BSc/sem3/sem1/sem1cs.pdf"
+         }
+      },
+      sem2: {
+         Mathematics: {
+            "June-2025": "BSc/sem2/mathssem2.pdf"
+         }
+      }
       
-       <p> Dec - 2025 paper <a href="${filename}"  class="btn">Open</a> </p>
-      
-       `;
-   
-   }
-   else if(selectsub.value==="cs" && select.value==="sem3"){
-      result.innerHTML=`<p>  Dec - 2025  <a href="${filename}" class="btn">Open</a></p>`;
-   }
-    filename= "BSc/"+select.value+ "/"+selectsub.value+select.value+".pdf";
- 
- 
+   },
 
- });
- result.addEventListener("click",(e)=>{
-   if(e.target.classList.contains("btn")){
-      
-window.open(filename,"_blank");
+   bcom: {
+      sem1: {
+         Business_law: {
+            "Dec-2025": "Bcom/sem1/Blawdec25.pdf"
+         },
+         Business_economics: {
+            "Dec-2025": "Bcom/sem1/Beco2025.pdf"
+         },
+         Fundamental_accounting: {
+            "Dec-2025": "Bcom/sem1/Facc2025.pdf"
+         }
+      },
+      // sem3: {
+      //    businesslaw: {
+      //       "2023": "papers/bcom/sem3/businesslaw/2023.pdf"
+      //    }
+      // }
+   },
+
+   // 🔥 NEW COURSE → BSc Bio
+   // bscbio: {
+   //    sem1: {
+   //       botany: {
+   //          "2023": "papers/bscbio/sem1/botany/2023.pdf"
+   //       },
+   //       zoology: {
+   //          "2023": "papers/bscbio/sem1/zoology/2023.pdf"
+   //       }
+   //    },
+   //    sem3: {
+   //       genetics: {
+   //          "2023": "papers/bscbio/sem3/genetics/2023.pdf"
+   //       }
+   //    }
+   // }
+
+};
+
+
+
+let course = document.getElementById("course");
+let semester = document.getElementById("semester");
+let subject = document.getElementById("subject");
+let btn = document.getElementById("showBtn");
+let result = document.getElementById("result");
+
+
+
+course.addEventListener("change", function () {
+
+   semester.innerHTML = "<option value=''>Select Semester</option>";
+   subject.innerHTML = "<option value=''>Select Subject</option>";
+
+   let selectedCourse = course.value;
+
+   if (!papersData[selectedCourse]) return;
+
+   for (let sem in papersData[selectedCourse]) {
+      semester.innerHTML += `<option value="${sem}">${sem}</option>`;
    }
+
 });
 
 
+
+semester.addEventListener("change", function () {
+
+   subject.innerHTML = "<option value=''>Select Subject</option>";
+
+   let selectedCourse = course.value;
+   let selectedSem = semester.value;
+
+   if (!papersData[selectedCourse]?.[selectedSem]) return;
+
+   for (let sub in papersData[selectedCourse][selectedSem]) {
+      subject.innerHTML += `<option value="${sub}">${sub}</option>`;
+   }
+
+});
+
+btn.addEventListener("click", function () {
+
+   result.innerHTML = "";
+
+   let selectedCourse = course.value;
+   let selectedSem = semester.value;
+   let selectedSub = subject.value;
+
+   let subjectData =
+      papersData[selectedCourse]?.[selectedSem]?.[selectedSub];
+
+   if (!subjectData) {
+      result.innerHTML = "Paper not available";
+      return;
+   }
+
+   for (let year in subjectData) {
+      let filePath = subjectData[year];
+
+      result.innerHTML += `
+      <p>
+        ${year} Paper 
+        <button class ="bttn" onclick="window.open('${filePath}')">
+          Open
+        </button>
+      </p>
+    `;
+   }
+
+});

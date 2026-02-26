@@ -18,6 +18,17 @@ let papersData = {
          Mathematics: {
             "June-2025": "BSc/sem2/mathssem2.pdf"
          }
+      },
+       sem3: {
+         computer_science: {
+            "Dec-2025": "BSc/sem3/cssem3.pdf"
+         },
+         Mathematics: {
+            "Dec-2025": "BSc/sem3/mathssem3.pdf"
+         },
+         physics: {
+            "Dec-2025": "BSc/sem3/physem3.pdf"
+         }
       }
       
    },

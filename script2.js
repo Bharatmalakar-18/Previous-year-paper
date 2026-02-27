@@ -20,6 +20,9 @@ let papersData = {
          },
          physics: {
             "June-2025":"BSc/sem2/physem2.pdf"
+         },
+         chemistry:{
+            "june-2025":"BSc/sem2/chemsem2.pdf"
          }
       },
        sem3: {

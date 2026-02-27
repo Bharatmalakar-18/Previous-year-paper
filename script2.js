@@ -11,12 +11,15 @@ let papersData = {
          //    "2023": "papers/bsc/sem1/chemistry/2023.pdf"
          // },
          computer_science:{
-            " Dec-2024":"BSc/sem3/sem1/sem1cs.pdf"
+            " Dec-2024":"BSc/sem1/sem1cs.pdf"
          }
       },
       sem2: {
          Mathematics: {
             "June-2025": "BSc/sem2/mathssem2.pdf"
+         },
+         physics: {
+            "June-2025":"BSc/sem2/physem2.pdf"
          }
       },
        sem3: {

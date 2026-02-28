@@ -34,6 +34,12 @@ let papersData = {
          },
          physics: {
             "Dec-2025": "BSc/sem3/physem3.pdf"
+         },
+         chemistry:{
+            "Dec-2025":"BSc/sem3/chemsem3.pdf"
+         },
+         AEC : {
+            "Dec-2025":"BSc/sem3/AEC.pdf"
          }
       }
       

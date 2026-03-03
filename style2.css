@@ -1,20 +1,4 @@
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-   body { 
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #4e73df, #1cc88a);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-} 
-
-/* Main Card */
 .main-container {
     background: #ffffff;
     padding: 30px;

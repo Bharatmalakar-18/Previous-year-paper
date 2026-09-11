@@ -40,10 +40,14 @@ let papersData = {
          },
          AEC : {
             "Dec-2025":"BSc/sem3/AEC.pdf"
+         },
+         DSE_physics:{
+           "Dec-2025":"BSc/sem3/ph-dse.pdf"
          }
       }
       
    },
+   
 
    bcom: {
       sem1: {
